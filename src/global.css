@@ -30,6 +30,10 @@
     box-sizing: border-box;
 }
 
+:focus{
+    outline: transparent;
+}
+
 body {
     background-color: var(--gray-600);
     color: var(--gray-300);
