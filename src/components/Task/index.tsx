@@ -5,10 +5,11 @@ import S from "./index.module.css";
 
 export interface TaskProps {
     task: TaskView;
+    onDelete(id: string): void;
     onHandleCheckedState(id: string): void;
 }
 
-const Task : FC<TaskProps> = ({task,onHandleCheckedState}) => {
+const Task : FC<TaskProps> = ({task, onDelete, onHandleCheckedState}) => {
     return (
         <div className={S.taskBox}>
             <label className={S.customCheckBox}>
@@ -20,7 +21,7 @@ const Task : FC<TaskProps> = ({task,onHandleCheckedState}) => {
                     ? <strong className={S.checked}>{task.activity}</strong>
                     : <strong>{task.activity}</strong>
             }
-            <button type="button">
+            <button type="button" onClick={() => onDelete(task.id)}>
                 <Trash size={20}/>
             </button>
         </div>
