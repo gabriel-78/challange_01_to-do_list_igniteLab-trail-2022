@@ -55,8 +55,16 @@ const Main = () => {
 
             <div className={S.container}>
                 <div className={S.labelCounterContainer}>
-                    <strong>Tarefas Criadas</strong>
-                    <strong>Concluídas</strong>
+                    <div>
+                        <strong>Tarefas Criadas</strong>
+                        <label>{taskList.length}</label>
+                    </div>
+                    <div>
+                        <strong>Concluídas</strong>
+                        <label>
+                            {taskList.filter(({checked}) => checked === true).length}
+                        </label>
+                    </div>
                 </div>
                 <div className={S.taskContainer}>
                     {taskList.map(

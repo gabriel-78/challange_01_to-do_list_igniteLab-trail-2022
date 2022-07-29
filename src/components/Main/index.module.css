@@ -29,3 +29,31 @@
     width: 100%;
     justify-content: space-between;
 }
+
+.labelCounterContainer div{
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.labelCounterContainer div label{
+    align-items: center;
+    background-color: var(--gray-400);
+    border-radius: 999px;
+    color: var(--gray-200);
+    display: flex;
+    font-weight: 700;
+    font-size: 12px;
+    height: 19px;
+    justify-content: center;
+    line-height: 15px;
+    width: 25px;
+}
+
+.labelCounterContainer div:nth-child(1) strong{
+    color: var(--blue);
+}
+
+.labelCounterContainer div:nth-child(2) strong{
+    color: var(--purple);
+}
