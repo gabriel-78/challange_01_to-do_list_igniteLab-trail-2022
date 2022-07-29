@@ -12,3 +12,20 @@
     gap: 8px;
     margin-top: calc(0px - 25px);
 }
+
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelCounterContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

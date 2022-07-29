@@ -25,8 +25,10 @@ const Main = () => {
         setTask("");
     }
 
-    const onHandleTaskValue = (event: ChangeEvent<HTMLInputElement>) => {
-        setTask(event.target.value);
+    const onDeleteTask = (taskId: string) => {
+        setTaskList((currentTaskList) => {
+            return currentTaskList.filter(({id}) => id !== taskId);
+        });
     }
     
     const onHandleTaskCheckValue = (taskId: string) => {
@@ -40,16 +42,27 @@ const Main = () => {
         })
     }
 
+    const onHandleTaskValue = (event: ChangeEvent<HTMLInputElement>) => {
+        setTask(event.target.value);
+    }
+
     return (
         <main className={S.main} >
             <form className={S.formContainer} onSubmit={createTask}>
                 <Input placeholder="Adicione uma nova tarefa" value={task} required onChange={onHandleTaskValue} />
                 <CreateButton type="submit" />
             </form>
-            <div className={S.taskContainer}>
-                {taskList.map(
-                    (task) => <Task key={task.id} task={task} onHandleCheckedState={onHandleTaskCheckValue} />
-                )}
+
+            <div className={S.container}>
+                <div className={S.labelCounterContainer}>
+                    <strong>Tarefas Criadas</strong>
+                    <strong>Concluídas</strong>
+                </div>
+                <div className={S.taskContainer}>
+                    {taskList.map(
+                        (task) => <Task key={task.id} task={task} onDelete={onDeleteTask} onHandleCheckedState={onHandleTaskCheckValue} />
+                    )}
+                </div>
             </div>
         </main>
     )
