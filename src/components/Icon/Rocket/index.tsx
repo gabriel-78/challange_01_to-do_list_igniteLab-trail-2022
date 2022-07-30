@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function Rocket() {
   return (
@@ -29,7 +29,7 @@ function Rocket() {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default Rocket;
+export default Rocket
