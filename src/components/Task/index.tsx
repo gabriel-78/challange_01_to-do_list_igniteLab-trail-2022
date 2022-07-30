@@ -16,11 +16,13 @@ const Task : FC<TaskProps> = ({task, onDelete, onHandleCheckedState}) => {
                 <input type="checkbox" onChange={() => onHandleCheckedState(task.id)} checked={task.checked} />
                 <span/>
             </label>
-            {
-                task.checked 
-                    ? <strong className={S.checked}>{task.activity}</strong>
-                    : <strong>{task.activity}</strong>
-            }
+            <div>
+                {
+                    task.checked 
+                        ? <strong className={S.checked}>{task.activity}</strong>
+                        : <strong>{task.activity}</strong>
+                }
+            </div>
             <button type="button" onClick={() => onDelete(task.id)}>
                 <Trash size={20}/>
             </button>

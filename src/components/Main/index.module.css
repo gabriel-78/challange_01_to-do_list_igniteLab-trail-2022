@@ -5,23 +5,42 @@
     gap: 64px;
     justify-content: center;
     width: 100%;
+    height: auto;
 }
 
 .formContainer {
     display: flex;
     gap: 8px;
     margin-top: calc(0px - 25px);
+    width: 65%;
 }
 
 .taskContainer {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.taskContainer::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+.taskContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.taskContainer::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
+    border-radius: 20px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+    gap: 24px;
+    width: 65%;
 }
 
 .labelCounterContainer {
@@ -47,7 +66,8 @@
     height: 19px;
     justify-content: center;
     line-height: 15px;
-    width: 25px;
+    min-width: 25px;
+    padding: 5px 8px;
 }
 
 .labelCounterContainer div:nth-child(1) strong{

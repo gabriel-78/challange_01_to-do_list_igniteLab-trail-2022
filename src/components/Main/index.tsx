@@ -4,6 +4,7 @@ import Input from "../Input";
 import Task from "../Task";
 import S from "./index.module.css";
 import {v4 as uuid} from "uuid";
+import EmptyTaskList from "../EmptyTaskList";
 
 export interface TaskView {
     id: string;
@@ -62,15 +63,23 @@ const Main = () => {
                     <div>
                         <strong>Concluídas</strong>
                         <label>
-                            {taskList.filter(({checked}) => checked === true).length}
+                            {
+                                taskList.length !== 0 
+                                ? `${taskList.filter(({checked}) => checked === true).length} de ${taskList.length}`
+                                : "0"
+                             }
                         </label>
                     </div>
                 </div>
-                <div className={S.taskContainer}>
-                    {taskList.map(
-                        (task) => <Task key={task.id} task={task} onDelete={onDeleteTask} onHandleCheckedState={onHandleTaskCheckValue} />
-                    )}
-                </div>
+                    {
+                        taskList.length > 0 ? 
+                            (<div className={S.taskContainer}>
+                                {taskList.map(
+                                    (task) => <Task key={task.id} task={task} onDelete={onDeleteTask} onHandleCheckedState={onHandleTaskCheckValue} />
+                                )}
+                            </div>)
+                        :   <EmptyTaskList/>
+                    }
             </div>
         </main>
     )
