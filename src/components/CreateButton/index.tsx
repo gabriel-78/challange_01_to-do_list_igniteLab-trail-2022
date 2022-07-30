@@ -1,15 +1,17 @@
-import { PlusCircle } from "phosphor-react";
-import { ButtonHTMLAttributes, FC } from "react";
+import { PlusCircle } from 'phosphor-react'
+import { ButtonHTMLAttributes, FC } from 'react'
 
-import S from "./index.module.css";
+import S from './index.module.css'
 
-const CreateButton : FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({...props}) => {
-    return (
-        <button className={S.button} {...props}>
-            Criar
-            <PlusCircle size={16}/>
-        </button>
-    );
+const CreateButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
+  ...props
+}) => {
+  return (
+    <button className={S.button} {...props}>
+      Criar
+      <PlusCircle size={16} />
+    </button>
+  )
 }
 
-export default CreateButton;
+export default CreateButton

@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
-const ClipboardRounded: FC<{size?: number}> = ({size}) => {
+const ClipboardRounded: FC<{ size?: number }> = ({ size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,11 +28,11 @@ const ClipboardRounded: FC<{size?: number}> = ({size}) => {
         ></image>
       </defs>
     </svg>
-  );
+  )
 }
 
 ClipboardRounded.defaultProps = {
-    size: 56,
+  size: 56,
 }
 
-export default ClipboardRounded;
+export default ClipboardRounded
