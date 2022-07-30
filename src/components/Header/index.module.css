@@ -3,16 +3,16 @@
     background-color: var(--gray-700);
     display: flex;
     gap: 10px;
-    height: 200px;
+    height: 28.5vh;
     justify-content: center;
 }
 
 .header strong {
+    background: linear-gradient(to right,var(--blue) 15%, var(--purple-dark) 85%);
     font-weight: 900;
     font-size: 40px;
     height: 48px;
     line-height: 48px;
-    background: linear-gradient(to right,var(--blue) 15%, var(--purple-dark) 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

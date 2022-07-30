@@ -6,12 +6,34 @@
     box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
     display: flex;
     gap: 12px;
-    height: 72px;
-    padding: 16px;
-    width: 736px;
+    min-height: 72px;
+    max-height: 85px;
+    overflow: hidden;
+    padding: 10px 16px;
+    width: 100%;
 }
 
-.taskBox strong {
+.taskBox div {
+    display: flex;
+    flex: 1;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.taskBox div::-webkit-scrollbar {
+    width: 4px;
+}
+  
+.taskBox div::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.taskBox div::-webkit-scrollbar-thumb {
+    background-color: var(--purple-dark);
+    border-radius: 20px;
+}
+
+.taskBox div strong {
     color: var(--gray-100);
     flex: 1;
     font-weight: 400;

@@ -1,0 +1,33 @@
+.emptyTask{
+    align-items: center;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 65px 25px;
+    width: 100%;
+}
+
+.emptyTask div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.emptyTask div small {
+    color: var(--gray-300);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.emptyTask div strong {
+    color: var(--gray-300);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
